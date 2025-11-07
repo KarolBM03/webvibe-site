@@ -560,24 +560,59 @@ nav ul li a:hover {
   overflow: hidden;
 }
 
+/* ✨ Decoración difuminada */
+.contacto-section::before,
+.contacto-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.contacto-section::before {
+  width: 300px;
+  height: 300px;
+  background: #007bff;
+  top: -60px;
+  left: -80px;
+}
+
+.contacto-section::after {
+  width: 350px;
+  height: 350px;
+  background: #00d4ff;
+  bottom: -100px;
+  right: -100px;
+}
+
+/* 🔹 Títulos */
 .contacto-section h2 {
   font-size: 2.5rem;
   margin-bottom: 15px;
   text-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+  position: relative;
+  z-index: 1;
 }
 
 .contacto-section .subtitle {
   color: #bcd4ff;
   margin-bottom: 50px;
   font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
 }
 
+/* 📬 Formulario */
 .contact-form {
   max-width: 600px;
   margin: 0 auto 40px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .form-group {
@@ -589,6 +624,7 @@ nav ul li a:hover {
   top: 14px;
   left: 15px;
   color: #00d4ff;
+  font-size: 1.2rem;
 }
 
 .contact-form input,
@@ -598,7 +634,7 @@ nav ul li a:hover {
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #fff;
   border-radius: 10px;
-  padding: 12px 15px 12px 40px;
+  padding: 12px 15px 12px 45px;
   font-size: 1rem;
   outline: none;
   transition: all 0.3s ease;
@@ -616,6 +652,7 @@ nav ul li a:hover {
   height: 130px;
 }
 
+/* ✉️ Botón */
 .contact-form .btn {
   background: linear-gradient(90deg, #00e0ff, #00ffa6);
   color: #08142b;
@@ -624,6 +661,7 @@ nav ul li a:hover {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  border: none;
 }
 
 .contact-form .btn:hover {
@@ -631,33 +669,69 @@ nav ul li a:hover {
   box-shadow: 0 0 20px #00ffa6;
 }
 
-/* 🔗 Enlaces de contacto */
+/* 🔗 Enlaces */
 .contact-links {
   display: flex;
   justify-content: center;
   gap: 30px;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-links a {
   color: #00e0ff;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .contact-links a:hover {
   color: #00ffa6;
+  transform: scale(1.1);
 }
 
-/* 📱 Responsivo */
+/* 📱 RESPONSIVE */
 @media (max-width: 768px) {
-  .testimonios-grid {
-    grid-template-columns: 1fr;
+  .contacto-section {
+    padding: 60px 6%;
+  }
+
+  .contacto-section h2 {
+    font-size: 2rem;
+  }
+
+  .contacto-section .subtitle {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
+  .contact-form {
+    width: 100%;
+    gap: 15px;
   }
 
   .contact-links {
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .contact-links a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px 15px 12px 40px;
+    font-size: 0.95rem;
+  }
+
+  .contact-form .btn {
+    padding: 12px;
+    font-size: 0.95rem;
   }
 }
 
