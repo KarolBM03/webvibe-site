@@ -1134,3 +1134,84 @@ h2 {
     transform: translateY(0);
   }
 }
+/* Sección Ubicación */
+.ubicacion-section {
+  text-align: center;
+  margin: 80px auto;
+  max-width: 900px;
+}
+
+.ubicacion-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #4a00e0;
+  font-weight: 700;
+}
+
+.mapa-wrapper {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Botón debajo del mapa */
+.map-btn {
+  margin-top: 18px;
+  padding: 10px 20px;
+  background: #4a00e0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.map-btn:hover {
+  background: #6a2be2;
+}
+
+/* Link Google Maps */
+.map-link {
+  display: block;
+  margin-top: 12px;
+  text-decoration: none;
+  color: #4a00e0;
+  font-weight: 600;
+}
+
+/* Efecto Fantasma */
+.ghost-overlay-map {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.ghost-bounce {
+  font-size: 50px;
+  animation: floatGhost 3s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+@keyframes floatGhost {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  display: none;
+}
